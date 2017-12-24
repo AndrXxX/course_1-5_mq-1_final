@@ -1,0 +1,892 @@
+/*---- макет ----*/
+
+.layout {
+  position: absolute;
+  background-size: 100% auto;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+  .layout {
+    /*width: 320px;
+    left: calc(50% - 160px);*/
+    background-image: url("../images/surface_320.jpg");
+  }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+  .layout {
+    /*width: 768px;
+    left: calc(50% - 384px);*/
+    background-image: url("../images/surface_768.jpg");
+  }
+}
+
+@media (min-width: 961px) {
+  .layout {
+    /*width: 1920px;
+    left: calc(50% - 960px);*/
+    background-image: url("../images/surface_desktop.jpg");
+  }
+}
+
+.change-layout {
+  position: fixed;
+  top: 85%;
+  right: 10px;
+  z-index: 999;
+  height: 140px;
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.change-layout>input {
+  height: 30px;
+  width: 100px;
+  margin: 5px;
+  font-size: 12px;
+}
+
+/*---- макет ----*/
+
+/*---- шрифты ----*/
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype"), font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype"), font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+/*---- шрифты ----*/
+
+/*---- общие стили ----*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+@media (min-width: 961px) and (max-width: 1920px) {
+  body {
+    font-size: 0.52084vw;
+    /* При ширине экрана 1920 ~ 10px*/
+  }
+}
+
+@media (min-width: 1921px) {
+  body {
+    font-size: 62.5%;
+  }
+  .header, .advantages, .footer {
+    padding-left: calc(50% - 960px);
+    padding-right: calc(50% - 960px);
+  }
+  .goal {
+    margin-left: calc(50% - 960px);
+    margin-right: calc(50% - 960px);
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  background-color: #5e42b0;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.button-text {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.button-label {
+  display: block;
+  font-weight: 700;
+  text-align: left;
+}
+
+.button-icon {
+  fill: #ffffff;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media (max-width: 640px) {
+  .button-text {
+    min-width: 31%;
+    margin-left: 2.5vw;
+  }
+  .button-icon {
+    width: 7.5vw;
+  }
+  .button {
+    height: 11vw;
+    margin-left: 6.125vw;
+    margin-right: 6.125vw;
+    border-radius: 5.5vw;
+    font-size: 2.5vw;
+  }
+  .button:first-child {
+    margin-bottom: 4.3vw;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+  .button-text {
+    min-width: 31%;
+    margin-left: 3.7vw;
+    margin-right: 3.5vw;
+  }
+  .button-icon {
+    width: 5.5vw;
+  }
+  .button {
+    height: 10vw;
+    width: 40.5vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 5.5vw;
+    font-size: 1.95vw;
+  }
+}
+
+@media (min-width: 961px) {
+  .button {
+    height: 7.8em;
+    width: 31em;
+    margin-left: 2.3em;
+    margin-right: 2.9em;
+    border-radius: 5.5em;
+  }
+  .button-text {
+    font-size: 1.5em;
+    min-width: 31%;
+    margin-left: 1.3em;
+    margin-right: 1.6em;
+    text-align: left;
+  }
+  .button-icon {
+    width: 5em;
+  }
+}
+
+/*---- общие стили ----*/
+
+/*---- шапка header ----*/
+
+.header {
+  background-color: #0f0f32;
+  background-size: 100% auto;
+}
+
+.header-logo {
+  fill: #ffffff;
+}
+
+.header-title {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header-title2 {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .header {
+    background-image: url("../images/header_bg_320.jpg");
+  }
+  .header-logo {
+    margin: 10vw 28vw 0;
+    width: 41.5vw;
+  }
+  .header-title {
+    margin-left: 6.125vw;
+    margin-top: 40vw;
+    font-size: 8.75vw;
+  }
+  .header-title2 {
+    margin-left: 14vw;
+    margin-top: 6vw;
+    line-height: 10vw;
+  }
+  .header-buttons {
+    padding-top: 21vw;
+    padding-bottom: 25.9vw;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+  .header {
+    background-image: url("../images/header_bg_768.jpg");
+  }
+  .header-logo {
+    margin: 5vw 36vw 0;
+    width: 26.5vw;
+  }
+  .header-title {
+    margin-left: 11vw;
+    margin-top: 21.2vw;
+    font-size: 8.7vw;
+  }
+  .header-title2 {
+    margin-left: 14vw;
+    margin-top: 0.4vw;
+    line-height: 10vw;
+  }
+  .header-buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 33.2vw;
+    padding-bottom: 11.9vw;
+  }
+}
+
+@media (min-width: 961px) {
+  .header {
+    background-image: url("../images/header_bg_desktop.jpg");
+    text-align: center;
+  }
+  .header-logo {
+    margin-top: 4.3em;
+    width: 20em;
+  }
+  .header-title {
+    text-align: left;
+    margin-left: 2.05em;
+    margin-top: 3.01em;
+    font-size: 9em;
+    letter-spacing: 0.05em;
+  }
+  .header-title2 {
+    margin-left: 5em;
+    line-height: 0.95em;
+  }
+  .header-buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 15.7em;
+    padding-bottom: 10.9em;
+  }
+}
+
+/*---- шапка header ----*/
+
+/*---- секция goals ----*/
+
+.goal-title {
+  font-weight: 700;
+  color: #e7e7e7;
+}
+
+.goal-features {
+  counter-reset: feature;
+}
+
+.goal-feature:nth-child(2) {
+  background-color: #f5f4f9;
+}
+
+.goal:nth-child(1) .goal-feature:nth-child(3) {
+  background-color: #5e42b0;
+}
+
+.goal:nth-child(2) .goal-feature:nth-child(3) {
+  background-color: #090c35;
+}
+
+.goal-feature-title {
+  position: relative;
+  font-weight: 700;
+  color: #c1c1c1;
+}
+
+.goal-feature-title::before {
+  counter-increment: feature;
+  content: "0" counter(feature);
+  position: absolute;
+  color: #000000;
+}
+
+.goal-feature-title::after {
+  content: "";
+  position: absolute;
+  background-color: #5e42b0;
+}
+
+.goal-feature:nth-child(3) .goal-feature-title::after {
+  background-color: #ffffff;
+}
+
+.goal:nth-child(2) .goal-feature:nth-child(3) .goal-feature-title:before {
+  color: #8765dd;
+}
+
+.goal-feature:last-child .goal-feature-description {
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .goal-img-container {
+    text-align: center;
+    margin-bottom: -19vw;
+    padding-bottom: 3px;
+  }
+  .goal-img {
+    height: 100%;
+  }
+  .goal:nth-child(1) .goal-img-container {
+    height: 88.5vw;
+  }
+  .goal:nth-child(2) .goal-img-container {
+    margin-bottom: -8.5vw;
+    height: 77.3vw;
+  }
+  .goal-title {
+    margin-left: 6vw;
+    margin-top: 4.375vw;
+    margin-bottom: 3.125vw;
+    font-size: 15.625vw;
+  }
+  .goal-feature {
+    padding-top: 16vw;
+    padding-bottom: 16.2vw;
+  }
+  .goal-feature:nth-child(1) {
+    background-color: #fafafa;
+    padding-top: 23.5vw;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(3) {
+    padding-bottom: 10.2vw;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(3) {
+    padding-top: 15vw;
+    padding-bottom: 16.8vw;
+  }
+  .goal-feature-title {
+    position: relative;
+    margin-bottom: 6vw;
+    margin-left: 14vw;
+    font-size: 8.75vw;
+    font-weight: 700;
+    color: #c1c1c1;
+  }
+  .goal-feature-title::before {
+    counter-increment: feature;
+    content: "0" counter(feature);
+    position: absolute;
+    top: 1.875vw;
+    left: -7.5vw;
+    color: #000000;
+    font-size: 4.5vw;
+  }
+  .goal-feature-title::after {
+    content: "";
+    position: absolute;
+    top: 6.875vw;
+    left: -7.9vw;
+    width: 5.5vw;
+    height: 1.2vw;
+    border-radius: 3vw;
+    background-color: #5e42b0;
+  }
+  .goal-feature:nth-child(3) .goal-feature-title::after {
+    background-color: #ffffff;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(3) .goal-feature-title:before {
+    color: #8765dd;
+  }
+  .goal-feature-description {
+    margin-left: 6vw;
+    max-width: 85vw;
+    font-size: 5vw;
+  }
+  .goal-feature:last-child .goal-feature-description {
+    color: #ffffff;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+  .goal {
+    position: relative;
+  }
+  .goal-img-container {
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+  }
+  .goal-img {
+    height: 100%;
+  }
+  .goal:nth-child(1) .goal-img-container {
+    top: 3vw;
+    left: -21vw;
+    height: 91.5vw;
+    margin-bottom: -19vw;
+    padding-bottom: 3px;
+  }
+  .goal:nth-child(2) .goal-img-container {
+    top: -4.5vw;
+    left: 43vw;
+    margin-bottom: -8.5vw;
+    height: 74vw;
+    width: 57vw;
+  }
+  .goal-title {
+    margin-top: 9vw;
+    font-size: 10.4vw;
+  }
+  .goal:nth-child(1) .goal-title {
+    margin-left: 38vw;
+  }
+  .goal:nth-child(2) .goal-title {
+    margin-left: 3.6vw;
+  }
+  .goal-feature {
+    padding-top: 4.7vw;
+    padding-bottom: 7.1vw;
+  }
+  .goal:nth-child(1) .goal-feature {
+    padding-left: 34vw;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(1) {
+    padding-top: 5.2vw;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(3) {
+    margin-top: -3vw;
+    padding-bottom: 7.2vw;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(1) {
+    padding-bottom: 5vw;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(2) {
+    padding-bottom: 8vw;
+    padding-top: 8vw;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(3) {
+    padding-top: 6.3vw;
+    padding-bottom: 5.8vw;
+  }
+  .goal-feature-title {
+    font-size: 4vw;
+  }
+  .goal:nth-child(1) .goal-feature-title {
+    margin-bottom: 2.9vw;
+    margin-left: 8vw;
+  }
+  .goal:nth-child(2) .goal-feature-title {
+    margin-bottom: 2.9vw;
+    margin-left: 8.3vw;
+  }
+  .goal-feature-title::before {
+    top: 0vw;
+    left: -4vw;
+    font-size: 2.3vw;
+  }
+  .goal-feature-title::after {
+    top: 3.2vw;
+    left: -4vw;
+    width: 2.5vw;
+    height: 0.6vw;
+    border-radius: 3vw;
+  }
+  .goal-feature-description {
+    margin-left: 4vw;
+    max-width: 55vw;
+    font-size: 2.2vw;
+    line-height: 3.7vw;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(3) .goal-feature-description {
+    font-size: 2.6vw;
+    max-width: 57vw;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(1) .goal-feature-description {
+    height: 4.5vw;
+    overflow: hidden;
+    margin-top: -0.3vw;
+    margin-bottom: 0.9vw;
+  }
+}
+
+@media (min-width: 961px) {
+  .goal {
+    position: relative;
+  }
+  .goal-img-container {
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+  }
+  .goal-img {
+    height: 100%;
+  }
+  .goal:nth-child(1) .goal-img-container {
+    top: -12.5em;
+    left: 27em;
+    height: 110.5em;
+    margin-bottom: -19em;
+    padding-bottom: 3px;
+  }
+  .goal:nth-child(2) .goal-img-container {
+    top: -4.5em;
+    left: 43em;
+    margin-bottom: -8.5em;
+    height: 74em;
+    width: 57em;
+  }
+  .goal-title {
+    margin-top: 1.1em;
+    font-size: 8.4em;
+    letter-spacing: -0.03em;
+  }
+  .goal:nth-child(1) .goal-title {
+    margin-left: 12em;
+  }
+  .goal:nth-child(2) .goal-title {
+    margin-left: 3.6em;
+  }
+  .goal-feature {
+    padding-top: 4.7em;
+    padding-bottom: 7.1em;
+  }
+  .goal:nth-child(1) .goal-feature {
+    padding-left: 73.5em;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(1) {
+    padding-top: 7.2em;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(3) {
+    margin-top: -3em;
+    padding-bottom: 7.2em;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(1) {
+    padding-bottom: 5em;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(2) {
+    padding-bottom: 8em;
+    padding-top: 8em;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(3) {
+    padding-top: 6.3em;
+    padding-bottom: 5.8em;
+  }
+  .goal-feature-title {
+    font-size: 3.8em;
+  }
+  .goal:nth-child(1) .goal-feature-title {
+        margin-bottom: 0.8em;
+    margin-left: 8em;
+  }
+  .goal:nth-child(2) .goal-feature-title {
+    margin-bottom: 2.9em;
+    margin-left: 8.3em;
+  }
+  .goal-feature-title::before {
+    top: 0.2em;
+    left: -1.6em;
+    font-size: 0.52em;
+  }
+  .goal-feature-title::after {
+    top: 0.8em;
+    left: -0.8em;
+    width: 0.55em;
+    height: 0.12em;
+    border-radius: 3em;
+  }
+  .goal-feature-description {
+    margin-left: 12.3em;
+    max-width: 55em;
+    font-size: 2.2em;
+    line-height: 1.2em;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(1) .goal-feature-description {
+    margin-top: -0.7em;
+    margin-bottom: -0.4em;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(2) .goal-feature-description {
+    margin-top: -0.2em;
+    margin-bottom: 1em;
+  }
+  .goal:nth-child(1) .goal-feature:nth-child(3) .goal-feature-description {
+    margin-top: -0.7em;
+    margin-bottom: 3.1em;
+  }
+  .goal:nth-child(2) .goal-feature:nth-child(3) .goal-feature-description {
+    font-size: 2.6em;
+    max-width: 57em;
+  }
+}
+
+/*---- секция goals ----*/
+
+/*---- секция advantages ----*/
+
+.advantages {
+  counter-reset: advantage;
+}
+
+.adv-img-container {
+  position: relative;
+}
+
+.adv-img {
+  max-width: 100%;
+}
+
+.adv-img-container::before {
+  counter-increment: advantage;
+  content: "0" counter(advantage);
+  position: absolute;
+  color: #f5f6f7;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.adv-img-container::after {
+  content: "";
+  position: absolute;
+  background-color: #8f7bc8;
+  z-index: 1;
+}
+
+.adv-img-num {
+  position: absolute;
+  background-color: #5e42b0;
+  z-index: 0;
+}
+
+.adv-title {
+  font-weight: 700;
+  color: #e7e7e7;
+}
+
+.adv-description {
+  color: #000000;
+}
+
+@media (max-width: 640px) {
+  .adv-img-container {
+    height: 110vw;
+  }
+  .adv-img {
+    max-width: 100%;
+  }
+  .adv-img-container::before {
+    top: 99vw;
+    left: 14.8vw;
+    font-size: 4.5vw;
+  }
+  .adv-img-container::after {
+    top: 105vw;
+    left: 14.7vw;
+    width: 5.25vw;
+    height: 1.2vw;
+    border-radius: 3vw;
+  }
+  .adv-img-num {
+    top: 91.5vw;
+    left: 6.2vw;
+    width: 22vw;
+    height: 22vw;
+  }
+  .adv-title {
+    margin-top: 9.5vw;
+    margin-left: 6vw;
+    font-size: 8.75vw;
+  }
+  .advantage:nth-child(1) .adv-title {
+    margin-top: 8vw;
+  }
+  .adv-description {
+    margin: 5vw 6vw 24vw;
+    line-height: 6.5vw;
+    font-size: 5vw;
+  }
+  .advantage:nth-child(1) .adv-description {
+    max-width: 73vw;
+  }
+  .advantage:nth-child(3) .adv-description {
+    margin-bottom: 20.5vw;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+  .advantages {
+    margin-top: 0.02vw;
+  }
+  .advantage:nth-child(2) {
+    margin-bottom: 13.8vw;
+  }
+  .adv-img-container {
+    height: 76vw;
+  }
+  .adv-img {
+    max-width: 100%;
+  }
+  .adv-img-container::before {
+    top: 70.5vw;
+    left: 10vw;
+    font-size: 3.3vw;
+  }
+  .adv-img-container::after {
+    top: 74.8vw;
+    left: 10.5vw;
+    width: 2.9vw;
+    height: 0.6vw;
+    border-radius: 3vw;
+  }
+  .adv-img-num {
+    top: 65.7vw;
+    left: 4.3vw;
+    width: 15.1vw;
+    height: 15.1vw;
+  }
+  .adv-title {
+    margin-top: 8.2vw;
+    margin-left: 4vw;
+    font-size: 10.5vw;
+  }
+  .advantage:nth-child(1) .adv-title {
+    margin-top: 9.5vw;
+  }
+  .adv-description {
+    margin: 2.3vw 4.3vw 12.9vw;
+    line-height: 3.7vw;
+    font-size: 3.47vw;
+  }
+  .adv-description {
+    max-width: 87vw;
+  }
+  .advantage:nth-child(3) .adv-description {
+    margin-bottom: 14.7vw;
+  }
+}
+
+/*---- секция advantages ----*/
+
+/*---- подвал footer ----*/
+
+.footer {
+  background-color: #0f0f32;
+  background-size: 100% auto;
+}
+
+.footer-icon-container {
+  background: linear-gradient(to top, #50379a, #7756d7);
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.footer-title {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-description {
+  font-weight: 700;
+  color: #9b8ec1;
+}
+
+.footer-logo {
+  fill: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    background-image: url("../images/footer_bg_320.jpg");
+    padding-top: 31vw;
+  }
+  .footer-icon-container {
+    margin-left: 38vw;
+    width: 22.3vw;
+    height: 23vw;
+    border-radius: 5vw;
+  }
+  .footer-icon {
+    margin: 4vw 3vw 3vw;
+  }
+  .footer-text {
+    margin-top: 16vw;
+    margin-bottom: 2vw;
+  }
+  .footer-title {
+    font-size: 10.75vw;
+  }
+  .footer-description {
+    font-size: 4.55vw;
+    margin-top: 1vw;
+  }
+  .footer-logo {
+    margin: 1vw 28vw 1vw;
+    width: 41.5vw;
+  }
+  .footer-buttons {
+    padding-top: 21vw;
+    padding-bottom: 26.3vw;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+  .footer {
+    background-image: url("../images/footer_bg_768.jpg");
+    padding-top: 16.4vw;
+  }
+  .footer-icon-container {
+    margin-left: 41.6vw;
+    width: 16.7vw;
+    height: 17.7vw;
+    border-radius: 3.7vw;
+  }
+  .footer-icon {
+    margin: 3vw 2.2vw 0vw;
+  }
+  .footer-text {
+    margin-top: 8.3vw;
+    margin-bottom: 2vw;
+  }
+  .footer-title {
+    font-size: 10.75vw;
+  }
+  .footer-description {
+    font-size: 4.55vw;
+    margin-top: 1vw;
+  }
+  .footer-logo {
+    margin: 7vw 36.5vw 1vw;
+    width: 26.8vw;
+  }
+  .footer-buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 34.4vw;
+  }
+}
+
+/*---- подвал footer ----*/
+
+}
